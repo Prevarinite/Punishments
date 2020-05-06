@@ -1,0 +1,60 @@
+name: Punishments
+main: com.prevarinite.punishments.Punishments
+version: ${project.version}
+default-permission: op
+description: "An advanced punishments plugin with database support."
+author: Prevarinite
+
+commands:
+  ban:
+    usage: |-
+      &cInvalid Usage!
+      &c/ban <player> [duration] [reason]
+    description: "Bans players"
+    permission: prevarinite.punishments.ban
+    permission-message: "&4You do not have permission to execute this command!"
+  kick:
+    usage: |-
+      &cInvalid Usage!
+      &c/kick <player> [reason]
+    description: "Kicks players"
+    permission: prevarinite.punishments.kick
+    permission-message: "&4You do not have permission to execute this command!"
+  unban:
+    usage: |-
+      &cInvalid Usage!
+      &c/unban <player>
+    description: "Unbans players"
+    permission: prevarinite.punishments.unban
+    permission-message: "&4You do not have permission to execute this command!"
+  mute:
+    usage: |-
+      &cInvalid Usage!
+      &c/mute <player> [duration] [reason]
+    description: "Mutes players"
+    permission: prevarinite.punishments.mute
+    permission-message: "&4You do not have permission to execute this command!"
+  unmute:
+    usage: |-
+      &cInvalid Usage!
+      &c/unmute <player>
+    description: "Unmutes players"
+    permission: prevarinite.punishments.unmute
+    permission-message: "&4You do not have permission to execute this command!"
+
+permissions:
+  prevarinite.punishments.ban:
+    description: "Allows for the banning of players"
+    default: op
+  prevarinite.punishments.kick:
+    description: "Allows for the kicking of players"
+    default: op
+  prevarinite.punishments.unban:
+    description: "Allows for the unbanning of players"
+    default: op
+  prevarinite.punishments.mute:
+    description: "Allows for the muting of players"
+    default: op
+  prevarinite.punishments.unmute:
+    description: "Allows for the unmuting of players"
+    default: op

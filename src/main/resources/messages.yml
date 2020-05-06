@@ -1,0 +1,74 @@
+# A messages configuration for Punisher version ${project.version}
+# Written By: BomBardyGamer
+
+# The following is a set of predefined variables for use in specific
+# defined areas (defined by categories)
+
+# Punishment Information Variables:
+# ${type} - The type of punishment (ban, kick, mute or warn)
+# ${date} - The date when the punishment was issued
+# ${until} - The date when the punishment expires
+# ${duration} - The duration left of the punishment
+# ${reason} - The reason for the punishment being issued
+# ${executor} - The name of the player who issued the punishment
+# ${executor_uuid} - The UUID of the player who issued the punishment
+
+# Player variables:
+# ${player} - The name of the player who has been punished
+# ${player_uuid} - The UUID of the player who has been punished
+# ${player_ip} - The IP address of the player who has been punished
+
+# Placeholder variables:
+# ${header} - The header of the ban message as defined in "banned_header"
+# ${appeal_message} - The appeal message of the ban message as defined in "banned_appeal"
+
+banned_header: |-
+  &cYou have been suspended from this server!
+
+  &cSuspension Date: &6${date}
+  &cSuspended By: &6${executor}
+  &cReason: &6${reason}
+
+banned_temporary: |-
+  ${header}
+  &cDuration: &6${duration}
+  ${appeal_message}
+
+banned_permanent: |-
+  ${header}
+  &cDuration: &4&lPermanent&r
+  ${appeal_message}
+
+banned_appeal: |-
+  &bAppeal at: www.example.com
+
+muted_temporary: |-
+  &4You have been muted by ${executor} &4for &c'&4${reason}&c'&4.
+  &4This mute will expire in ${duration}.
+
+muted_permanent: |-
+  &4You have been muted by ${executor} &4for &c'&4${reason}&c'&4.
+  &4This mute will not expire.
+
+kicked_message: "&cYou have been kicked from this server by ${executor} for ${reason}."
+
+warned_temporary: |-
+  &4You have been warned by ${executor} &4for &c'&4${reason}&c'&4.
+  &4This warning will expire in ${duration}.
+
+ban_reason_default: 'The Ban Hammer has Spoken!'
+kick_reason_default: ''
+mute_reason_default: 'Spamming'
+
+commands:
+  # only ${executor}, ${player}, ${duration}, and ${reason} are valid placeholders.
+  ban:
+    ban_broadcast: '&a${executor} &fbanned &a${player} &ffor &a${reason}'
+    tempban_broadcast: '&a${executor} &fbanned &a${player} &ffor ${duration} &ffor ''&a${reason}'''
+    unban_broadcast: '&a${executor} &funbanned &a${player}'
+  mute:
+    mute_broadcast: '&a${executor} &fmuted &a${player} &ffor &a${reason}'
+    tempmute_broadcast: '&a${executor} &fmuted &a${player} &ffor ${duration} &ffor ''&a${reason}'''
+    unmute_broadcast: '&a${executor} &funmuted &a${player}'
+  kick:
+    kick_broadcast: '&a${executor} &fkicked &a${player} &ffor &a${reason}'

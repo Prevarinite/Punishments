@@ -1,0 +1,6 @@
+sql:
+  driver: mariadb
+  address: localhost
+  database: 'punishments'
+  username: 'punishments'
+  password: ''
